@@ -1,0 +1,232 @@
+@font-face {
+    font-family: "Mont";
+    src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "BigDeal";
+    src: url(./fonts/aBigDeal.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mont", sans-serif;
+}
+:root {
+    --color-logo: #AAAAAA;
+    --color-logo-hover: #272727;
+    --color-default: #f1f1f1;
+  }
+body{
+    background: #dfdfdf;
+    position: relative;
+    min-height: 100vh;
+    /* overflow: hidden; */
+}
+li{
+    list-style: none;
+}
+a, a:focus{
+    text-decoration: none;
+    color: var(--color-logo);
+    font-weight: bold;
+    transition: all .5s ease-in-out;
+}
+
+li a.active, li a:hover{
+    color: var(--color-logo-hover);
+}
+#btn{
+    padding: 10px 15px;
+    background: var(--color-logo-hover);
+    color: var(--color-default);
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+}
+#btn a{
+    font-weight: 500;
+}
+/* .beforeContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 100;
+} */
+.container{
+    padding: 0 50px;
+    width: 100%;
+    height: 200vh;
+}
+.container .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    min-height: 10vh;
+    position: relative;
+}
+.nav .logo{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav .navList ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 10px;
+}
+ul li{
+    width: 100%;
+    padding: 4px;
+}
+ul li a{
+    font-size: .9rem;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#content{
+    min-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+#content .content_top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1010px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.content_top .content_left{
+    width: 60%;
+}
+.content_left h1, .content_left h1 span{
+    font-size: calc(2.7vw + 10px);
+    text-transform: uppercase;
+    font-family: "BigDeal", "Mont", sans-serif;
+    color: var(--color-logo);
+}
+.content_left h1 span{
+    color: var(--color-logo-hover);
+}
+.content_left p{
+    font-size: .9rem;
+    margin: 15px 0;
+}
+
+.content_top .content_right{
+    width: 40%;
+    height: 450px;
+
+    position: relative;
+    overflow: hidden;
+}
+.content_right .img{
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    transition: all .5s ease-in-out;
+}
+#uno{
+    left: 0;
+}
+#duo{
+    top: -400px;
+}
+#trio{
+    top: 400px;
+}
+.content_right .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#content .content_bottom{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.content_bottom p{
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+}
+.content_bottom .model{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+}
+.model .model_content{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.model_content img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
+}
+.model .model_content:hover img{
+    transform: scale(1.2) translateY(10px);
+}
+
+@media screen and (max-width: 850px){
+    .container .nav{
+        margin: 0 0 20px;
+    }
+    #content .content_top{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .content_top .content_left{
+        width: 100%;
+        margin: 0 0 20px;
+    }
+    .content_top .content_right{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+    .container{
+        padding: 0 5px;
+    }
+    .container .nav{
+        justify-content: center;
+    }
+    .nav .navList{
+        display: none;
+    }
+    #content .content_top{
+        width: 100%;
+    }
+    .content_left p{
+        font-size: .8rem;
+    }
+    #btn a {
+        font-size: .7rem;
+    }
+    #content{
+        flex-direction: column-reverse;
+    }
+    #content .content_bottom{
+        width: 100%;
+    }
+}
